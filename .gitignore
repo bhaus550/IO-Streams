@@ -1,0 +1,36 @@
+#include <iostream>
+#include <fstream>
+#include <cstdlib>
+#include <cctype>
+#include <string>
+#include <cstdio>
+using namespace std;
+
+char array[100];
+
+int main() {
+	ifstream in_stream1;
+	ofstream out_stream1,out_error;
+	in_stream1.open("LabInput3-1.txt");
+	if(in_stream1.fail()){
+		cout<<"Failed to open\n";
+		exit(1);
+	}
+out_stream1.open("LabOutput3-1.txt");
+if (out_stream1.fail()){
+	cerr<<"Failed to open\n";
+	exit(1);
+}
+
+int count = 0;
+while(in_stream1>>array[count++]){
+}
+
+for(int j=0; j<count-1; j++){
+	out_stream1<<((char)toupper(array[j]));
+}
+
+	in_stream1.close();
+	out_stream1.close();
+	return 0;
+}
